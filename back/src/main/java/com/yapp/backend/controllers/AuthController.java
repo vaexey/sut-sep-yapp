@@ -23,12 +23,12 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody AuthRequest req) {
         try {
             authManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(req.getUsername(), req.getPassword())
+                    new UsernamePasswordAuthenticationToken(req.username(), req.password())
             );
         } catch(BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("");
         }
-        String token = jwtUtil.generateToken(req.getUsername());
+        String token = jwtUtil.generateToken(req.username());
         return ResponseEntity.ok(new AuthResponse(token));
     }
 }

@@ -1,0 +1,19 @@
+body {
+  background-color: #9f84d9;
+}
+
+.homepage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.homepage-buttons {
+  display: flex;
+  flex-direction: column;
+}

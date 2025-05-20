@@ -19,10 +19,6 @@ const MyProfile = () => {
     },
   ];
 
-  const handleReport = (id) => {
-    alert(`Zgłoszono pytanie o ID: ${id}`);
-  };
-
   return (
     <div className="myProfileContainer">
       <h1 className="myProfileTitle">My Profile: {username}</h1>
@@ -43,9 +39,6 @@ const MyProfile = () => {
               <div className="submittedAnswer">
                 <strong>Your answer:</strong> {q.answer}
               </div>
-              <button className="reportButton" onClick={() => handleReport(q.id)}>
-                Report
-              </button>
             </div>
           ))
         )}

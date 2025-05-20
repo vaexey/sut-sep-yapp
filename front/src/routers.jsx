@@ -9,6 +9,7 @@ import MyProfile from './pages/MyProfile';
 import QuestionInbox from './pages/QuestionInbox';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import AdminPanel from './pages/AdminPanel';
 
 // import Loginpage from './pages/Loginpage';
 // import Registerpage from './pages/Registerpage';
@@ -29,6 +30,8 @@ const AppRoutes = () => (
     <Route path="/inbox" element={<QuestionInbox />} />
     <Route path="/login" element={<LoginPage />} />
     <Route path="/register" element={<RegisterPage />} />
+    <Route path="/admin" element={<AdminPanel />} />
+
     {/* <Route path="/login" element={<Loginpage />} />
     <Route path="/register" element={<Registerpage />} />
     <Route path="/dashboard" element={<Dashboard />} />

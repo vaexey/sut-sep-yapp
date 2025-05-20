@@ -1,0 +1,53 @@
+.registerContainer {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.registerTitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registerInput {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.registerButton {
+  padding: 10px;
+  background-color: #1e28d9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.registerButton:hover {
+  background-color: #171fbd;
+}
+
+.registerText {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #5d47d2;
+  cursor: pointer;
+  font-weight: bold;
+}

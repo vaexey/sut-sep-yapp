@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Router>
-      {isLoggedIn && <Navbar />}
+      <Navbar isLoggedIn={isLoggedIn} />
       <AppRoutes />
     </Router>
   );

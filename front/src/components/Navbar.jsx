@@ -1,24 +1,39 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { FaUser, FaSearch, FaCommentAlt, FaCog } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn }) => {
   const navigate = useNavigate();
 
   const handleUser = () => {
-    navigate(`/my-profile`);
+    if (isLoggedIn) {
+      navigate(`/my-profile`);
+    } else {
+      navigate(`/login`);
+    }
   };
+
   const handleSearch = () => {
     navigate(`/browse`);
   };
+
   const handleInbox = () => {
-    navigate(`/inbox`);
+    if (isLoggedIn) {
+      navigate(`/inbox`);
+    } else {
+      navigate(`/login`);
+    }
   };
+
   const handleSettings = () => {
-    navigate(`/my-profile`);
+    if (isLoggedIn) {
+      navigate(`/settings`);
+    } else {
+      navigate(`/login`);
+    }
   };
+
   return (
     <div className="navbar">
       <button className="navButton" onClick={handleUser}>

@@ -5,6 +5,8 @@ import Browse from './pages/Browse';
 import Profile from './pages/Profile';
 import QuestionAsk from './pages/QuestionAsk';
 import AnswerPage from './pages/AnswerPage';
+import MyProfile from './pages/MyProfile';
+import QuestionInbox from './pages/QuestionInbox';
 
 // import Loginpage from './pages/Loginpage';
 // import Registerpage from './pages/Registerpage';
@@ -21,6 +23,9 @@ const AppRoutes = () => (
     <Route path="/profile/:username" element={<Profile />} />
     <Route path="/ask/:username" element={<QuestionAsk />} />
     <Route path="/answer/:questionId" element={<AnswerPage />} />
+    <Route path="/my-profile" element={<MyProfile />} />
+    <Route path="/inbox" element={<QuestionInbox />} />
+
     {/* <Route path="/login" element={<Loginpage />} />
     <Route path="/register" element={<Registerpage />} />
     <Route path="/dashboard" element={<Dashboard />} />

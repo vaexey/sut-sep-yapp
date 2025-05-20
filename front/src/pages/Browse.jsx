@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // ✅ dodano Link
 import '../styles/Browse.css';
 
 const Browse = () => {
@@ -7,7 +7,7 @@ const Browse = () => {
 
   const allUsers = [
     'alice123',
-    'bob_the_builder',
+    'bob_the_builderdsdsdss',
     'charlie88',
     'deltaQueen',
     'echo_91',
@@ -81,10 +81,11 @@ const Browse = () => {
 
         <div className="userList">
           {filteredUsers.map((user, index) => (
-            <div className="userItem" key={index}>
+            <Link to={`/profile/${user}`} className="userItem" key={index}>
+              {' '}
               <div className="userIcon">🙋‍♂️</div>
               <span className="username">{user}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

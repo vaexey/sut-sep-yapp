@@ -8,8 +8,8 @@ Web site when everyone can ask questions anonymously.
 
 ```powershell
 cd front
-npm install     # or: yarn
-npm start       # or: yarn start
+npm install
+npm run dev
 ```
 
 [Spring Boot](https://spring.io/projects/spring-boot)

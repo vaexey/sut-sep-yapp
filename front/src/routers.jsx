@@ -5,8 +5,8 @@ import Browse from './pages/Browse';
 import Profile from './pages/Profile';
 import QuestionAsk from './pages/QuestionAsk';
 
-// import Loginpage from './pages/Loginpage';
-// import Registerpage from './pages/Registerpage';
+import Loginpage from './pages/Loginpage';
+import Registerpage from './pages/Registerpage';
 // import Dashboard from './pages/Dashboard';
 // import AdminPanel from './pages/AdminPanel';
 // import QuestionAsk from './pages/QuestionAsk';
@@ -20,9 +20,9 @@ const AppRoutes = () => (
     <Route path="/profile/:username" element={<Profile />} />
     <Route path="/ask/:username" element={<QuestionAsk />} />
 
-    {/* <Route path="/login" element={<Loginpage />} />
+     <Route path="/login" element={<Loginpage />} />
     <Route path="/register" element={<Registerpage />} />
-    <Route path="/dashboard" element={<Dashboard />} />
+    {/* <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/admin" element={<AdminPanel />} />
     <Route path="/inbox" element={<QuestionInbox />} />
     <Route path="/report" element={<Report />} />

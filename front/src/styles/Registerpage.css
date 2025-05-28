@@ -1,0 +1,82 @@
+.registerPage {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.leftCol {
+  width: 30%;
+  background-color: #f0f0f0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  color: black;
+  margin-top: 30px;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.backButton {
+  background-color: #1a2de8;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.backButton:hover {
+  transform: scale(1.05);
+}
+
+.rightCol {
+  width: 70%;
+  background-color: #c0a6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.searchInput {
+  border-radius: 20px;
+  border: none;
+  width: 300px;
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  background-color: white;
+}
+
+.backButton {
+  background-color: #1a2de8;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  transform: scale(1.05);
+}

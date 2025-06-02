@@ -1,0 +1,102 @@
+.profileContainer {
+  padding: 40px;
+  text-align: center;
+  background-color: #f9f9ff;
+  min-height: 100vh;
+}
+
+.profileTitle {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profileInfo {
+  font-size: 18px;
+  color: #666;
+}
+
+.askButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5d47d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.askButton:hover {
+  background-color: #4534a7;
+}
+
+.questionsSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.questionItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.questionAuthor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatarCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #a98de3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.questionText {
+}
+
+.showAnswer {
+  background-color: #1e28d9;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 20px;
+  width: 150px;
+  margin: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.showAnswer:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
+}
+
+.reportButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reportButton:hover {
+  background-color: #c0392b;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}

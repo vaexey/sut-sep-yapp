@@ -1,0 +1,99 @@
+.questionInboxContainer {
+  padding: 40px;
+  background-color: #f9f9ff;
+  min-height: 100vh;
+}
+
+.questionInboxTitle {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.noQuestions {
+  font-style: italic;
+  color: #666;
+}
+
+.questionItem {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.questionInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.avatarCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #d8c9f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.questionText {
+  font-size: 16px;
+  color: #333;
+  word-break: break-word;
+  white-space: pre-wrap;
+  flex: 1;
+}
+
+.answerTextarea {
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submitAnswerButton {
+  padding: 10px 20px;
+  font-size: 15px;
+  background-color: #1e28d9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submitAnswerButton:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.reportButtonInbox {
+  padding: 10px 20px;
+  font-size: 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.reportButton:hover {
+  background-color: #c0392b;
+}

@@ -1,14 +1,53 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaUser, FaSearch, FaCommentAlt, FaCog } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleUser = () => {
+    if (isLoggedIn) {
+      navigate(`/my-profile`);
+    } else {
+      navigate(`/login`);
+    }
+  };
+
+  const handleSearch = () => {
+    navigate(`/browse`);
+  };
+
+  const handleInbox = () => {
+    if (isLoggedIn) {
+      navigate(`/inbox`);
+    } else {
+      navigate(`/login`);
+    }
+  };
+
+  const handleSettings = () => {
+    if (isLoggedIn) {
+      navigate(`/settings`);
+    } else {
+      navigate(`/login`);
+    }
+  };
+
   return (
     <div className="navbar">
-      <FaUser className="nav-icon" />
-      <FaSearch className="nav-icon" />
-      <FaCommentAlt className="nav-icon" />
-      <FaCog className="nav-icon" />
+      <button className="navButton" onClick={handleUser}>
+        <FaUser className="nav-icon" />
+      </button>
+      <button className="navButton" onClick={handleSearch}>
+        <FaSearch className="nav-icon" />
+      </button>
+      <button className="navButton" onClick={handleInbox}>
+        <FaCommentAlt className="nav-icon" />
+      </button>
+      <button className="navButton" onClick={handleSettings}>
+        <FaCog className="nav-icon" />
+      </button>
     </div>
   );
 };

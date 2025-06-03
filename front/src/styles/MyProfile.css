@@ -1,13 +1,24 @@
-.questionInboxContainer {
+.myProfileContainer {
   padding: 40px;
-  background-color: #f9f9ff;
+  background-color: white;
   min-height: 100vh;
 }
 
-.questionInboxTitle {
+.myProfileTitle {
   font-size: 32px;
   margin-bottom: 30px;
   color: #333;
+}
+
+.questionsToMeSection {
+  background-color: #d5cce6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .noQuestions {
@@ -16,13 +27,13 @@
 }
 
 .questionItem {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
 }
 
 .questionInfo {
@@ -53,47 +64,11 @@
   flex: 1;
 }
 
-.answerTextarea {
-  height: 100px;
+.submittedAnswer {
+  font-size: 16px;
   margin-top: 10px;
+  color: #222;
+  background-color: #f1efff;
   padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  resize: vertical;
-}
-
-.actionButtons {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.submitAnswerButton {
-  padding: 10px 20px;
-  font-size: 15px;
-  background-color: #1e28d9;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.submitAnswerButton:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.reportButtonInbox {
-  padding: 10px 20px;
-  font-size: 15px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.reportButton:hover {
-  background-color: #c0392b;
+  border-radius: 6px;
 }

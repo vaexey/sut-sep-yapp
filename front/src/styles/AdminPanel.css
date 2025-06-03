@@ -1,0 +1,74 @@
+.adminPanelContainer {
+  padding: 40px;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+.adminTitle {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.adminSection {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.AdminUserItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.username {
+  font-size: 16px;
+}
+
+.banButton,
+.unbanButton,
+.removeButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.banButton {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.unbanButton {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.removeButton {
+  background-color: #555;
+  color: white;
+  margin-top: 10px;
+}
+
+.noReports {
+  font-style: italic;
+  color: #666;
+}
+
+.reportItem {
+  background-color: #f4f4f4;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}

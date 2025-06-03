@@ -57,3 +57,17 @@ body {
   color: white;
   transform: scale(1.05);
 }
+
+.navButton {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.navButton:hover {
+  background-color: white;
+  border: none;
+  transform: scale(1.05);
+}

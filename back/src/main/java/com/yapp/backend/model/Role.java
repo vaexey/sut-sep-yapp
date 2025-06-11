@@ -16,7 +16,7 @@ public class Role {
 
     // attributes
     @Column(unique = true)
-    private String Name;
+    private String name;
 
     // relations
     @OneToMany(mappedBy = "role")

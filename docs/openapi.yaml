@@ -1,0 +1,1825 @@
+openapi: 3.0.0
+info:
+  title: OpenAPI spec
+  version: v0
+servers:
+  - url: http://localhost:8081
+    description: Generated server url
+paths:
+  /api/answerReports:
+    get:
+      tags:
+        - Answer Report
+      description: get-answerreport
+      operationId: getCollectionResource-answerreport-get
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelAnswerReport'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelAnswerReport'
+            text/uri-list:
+              schema:
+                type: string
+    post:
+      tags:
+        - Answer Report
+      description: create-answerreport
+      operationId: postCollectionResource-answerreport-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerReportRequestBody'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswerReport'
+  /api/answerReports/{id}:
+    get:
+      tags:
+        - Answer Report
+      description: get-answerreport
+      operationId: getItemResource-answerreport-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswerReport'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - Answer Report
+      description: update-answerreport
+      operationId: putItemResource-answerreport-put
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerReportRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswerReport'
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswerReport'
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - Answer Report
+      description: delete-answerreport
+      operationId: deleteItemResource-answerreport-delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /api/answerReports/{id}/answer:
+    get:
+      tags:
+        - Answer Report Ref
+      description: get-answer-by-answerreport-Id
+      operationId: followPropertyReference-answerreport-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswer'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/answers:
+    get:
+      tags:
+        - Answer
+      description: get-answer
+      operationId: getCollectionResource-answer-get
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelAnswer'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelAnswer'
+            text/uri-list:
+              schema:
+                type: string
+    post:
+      tags:
+        - Answer
+      description: create-answer
+      operationId: postCollectionResource-answer-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerRequestBody'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswer'
+  /api/answers/{id}:
+    get:
+      tags:
+        - Answer
+      description: get-answer
+      operationId: getItemResource-answer-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswer'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - Answer
+      description: update-answer
+      operationId: putItemResource-answer-put
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswer'
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswer'
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - Answer
+      description: delete-answer
+      operationId: deleteItemResource-answer-delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /api/answers/{id}/answerReports:
+    get:
+      tags:
+        - Answer Property Ref
+      description: get-answerreport-by-answer-Id
+      operationId: followPropertyReference-answer-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelAnswerReport'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/answers/{id}/children:
+    get:
+      tags:
+        - Answer Property Ref
+      description: get-answer-by-answer-Id
+      operationId: followPropertyReference-answer-get_2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelAnswer'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/answers/{id}/parent:
+    get:
+      tags:
+        - Answer Property Ref
+      description: get-answer-by-answer-Id
+      operationId: followPropertyReference-answer-get_4
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelAnswer'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/answers/{id}/question:
+    get:
+      tags:
+        - Answer Property Ref
+      description: get-question-by-answer-Id
+      operationId: followPropertyReference-answer-get_6
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questionLikes:
+    get:
+      tags:
+        - Question Like
+      description: get-questionlike
+      operationId: getCollectionResource-questionlike-get
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelQuestionLike'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelQuestionLike'
+            text/uri-list:
+              schema:
+                type: string
+    post:
+      tags:
+        - Question Like
+      description: create-questionlike
+      operationId: postCollectionResource-questionlike-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionLikeRequestBody'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionLike'
+  /api/questionLikes/{id}:
+    get:
+      tags:
+        - Question Like
+      description: get-questionlike
+      operationId: getItemResource-questionlike-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionLike'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - Question Like
+      description: update-questionlike
+      operationId: putItemResource-questionlike-put
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionLikeRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionLike'
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionLike'
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - Question Like
+      description: delete-questionlike
+      operationId: deleteItemResource-questionlike-delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /api/questionLikes/{id}/question:
+    get:
+      tags:
+        - Question Like Ref
+      description: get-question-by-questionlike-Id
+      operationId: followPropertyReference-questionlike-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questionLikes/{id}/user:
+    get:
+      tags:
+        - Question Like Ref
+      description: get-user-by-questionlike-Id
+      operationId: followPropertyReference-questionlike-get_2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelUser'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questionReports:
+    get:
+      tags:
+        - Question Report
+      description: get-questionreport
+      operationId: getCollectionResource-questionreport-get
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelQuestionReport'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelQuestionReport'
+            text/uri-list:
+              schema:
+                type: string
+    post:
+      tags:
+        - Question Report
+      description: create-questionreport
+      operationId: postCollectionResource-questionreport-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionReportRequestBody'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionReport'
+  /api/questionReports/{id}:
+    get:
+      tags:
+        - Question Report
+      description: get-questionreport
+      operationId: getItemResource-questionreport-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionReport'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - Question Report
+      description: update-questionreport
+      operationId: putItemResource-questionreport-put
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionReportRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionReport'
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestionReport'
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - Question Report
+      description: delete-questionreport
+      operationId: deleteItemResource-questionreport-delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /api/questionReports/{id}/question:
+    get:
+      tags:
+        - Question Report Ref
+      description: get-question-by-questionreport-Id
+      operationId: followPropertyReference-questionreport-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questionReports/{id}/user:
+    get:
+      tags:
+        - Question Report Ref
+      description: get-user-by-questionreport-Id
+      operationId: followPropertyReference-questionreport-get_2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelUser'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questions:
+    get:
+      tags:
+        - Question
+      description: get-question
+      operationId: getCollectionResource-question-get
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelQuestion'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelQuestion'
+            text/uri-list:
+              schema:
+                type: string
+    post:
+      tags:
+        - Question
+      description: create-question
+      operationId: postCollectionResource-question-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionRequestBody'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+  /api/questions/{id}:
+    get:
+      tags:
+        - Question
+      description: get-question
+      operationId: getItemResource-question-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - Question
+      description: update-question
+      operationId: putItemResource-question-put
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelQuestion'
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - Question
+      description: delete-question
+      operationId: deleteItemResource-question-delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /api/questions/{id}/answers:
+    get:
+      tags:
+        - Question Property Ref
+      description: get-answer-by-question-Id
+      operationId: followPropertyReference-question-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelAnswer'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questions/{id}/questionLikes:
+    get:
+      tags:
+        - Question Property Ref
+      description: get-questionlike-by-question-Id
+      operationId: followPropertyReference-question-get_2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelQuestionLike'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/questions/{id}/questionReports:
+    get:
+      tags:
+        - Question Property Ref
+      description: get-questionreport-by-question-Id
+      operationId: followPropertyReference-question-get_4
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelQuestionReport'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/users:
+    get:
+      tags:
+        - User
+      description: get-user
+      operationId: getCollectionResource-user-get
+      parameters:
+        - name: page
+          in: query
+          description: Zero-based page index (0..N)
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: size
+          in: query
+          description: The size of the page to be returned
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+        - name: sort
+          in: query
+          description: >-
+            Sorting criteria in the format: property,(asc|desc). Default sort
+            order is ascending. Multiple sort criteria are supported.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelUser'
+            application/x-spring-data-compact+json:
+              schema:
+                $ref: '#/components/schemas/PagedModelEntityModelUser'
+            text/uri-list:
+              schema:
+                type: string
+    post:
+      tags:
+        - User
+      description: create-user
+      operationId: postCollectionResource-user-post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequestBody'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelUser'
+  /api/users/{id}:
+    get:
+      tags:
+        - User
+      description: get-user
+      operationId: getItemResource-user-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelUser'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - User
+      description: update-user
+      operationId: putItemResource-user-put
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelUser'
+        '201':
+          description: Created
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/EntityModelUser'
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - User
+      description: delete-user
+      operationId: deleteItemResource-user-delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /api/users/{id}/answerReports:
+    get:
+      tags:
+        - User Property Ref
+      description: get-answerreport-by-user-Id
+      operationId: followPropertyReference-user-get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelAnswerReport'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/users/{id}/answers:
+    get:
+      tags:
+        - User Property Ref
+      description: get-answer-by-user-Id
+      operationId: followPropertyReference-user-get_2
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelAnswer'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/users/{id}/questionLikes:
+    get:
+      tags:
+        - User Property Ref
+      description: get-questionlike-by-user-Id
+      operationId: followPropertyReference-user-get_4
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelQuestionLike'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /api/users/{id}/questionReports:
+    get:
+      tags:
+        - User Property Ref
+      description: get-questionreport-by-user-Id
+      operationId: followPropertyReference-user-get_6
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/CollectionModelQuestionReport'
+            text/uri-list:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+  /auth/login:
+    post:
+      tags:
+        - auth-controller
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                type: object
+  /hello:
+    get:
+      tags:
+        - hello-test-controller
+      operationId: sayHello
+      responses:
+        '200':
+          description: OK
+          content:
+            application/hal+json:
+              schema:
+                type: string
+components:
+  schemas:
+    AbstractJsonSchemaPropertyObject:
+      type: object
+      properties:
+        title:
+          type: string
+        readOnly:
+          type: boolean
+    Item:
+      type: object
+      properties:
+        type:
+          type: string
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/AbstractJsonSchemaPropertyObject'
+        requiredProperties:
+          type: array
+          items:
+            type: string
+    JsonSchema:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/AbstractJsonSchemaPropertyObject'
+        requiredProperties:
+          type: array
+          items:
+            type: string
+        definitions:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Item'
+        type:
+          type: string
+        $schema:
+          type: string
+    RepresentationModelObject:
+      type: object
+      properties:
+        _links:
+          $ref: '#/components/schemas/Links'
+    Answer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        parent:
+          $ref: '#/components/schemas/Answer'
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+        answerReports:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnswerReport'
+        question:
+          $ref: '#/components/schemas/Question'
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+    AnswerReport:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        reason:
+          type: string
+        answer:
+          $ref: '#/components/schemas/Answer'
+        user:
+          $ref: '#/components/schemas/User'
+        reasonable:
+          type: boolean
+    EntityModelQuestion:
+      type: object
+      properties:
+        content:
+          type: string
+        questionAuthors:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionAuthor'
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+        _links:
+          $ref: '#/components/schemas/Links'
+    PageMetadata:
+      type: object
+      properties:
+        size:
+          type: integer
+          format: int64
+        totalElements:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int64
+        number:
+          type: integer
+          format: int64
+    PagedModelEntityModelQuestion:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/EntityModelQuestion'
+        _links:
+          $ref: '#/components/schemas/Links'
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+    Question:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+        questionReports:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionReport'
+        questionLikes:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionLike'
+        questionAuthors:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionAuthor'
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+    QuestionAuthor:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        user:
+          $ref: '#/components/schemas/User'
+        question:
+          $ref: '#/components/schemas/Question'
+    QuestionLike:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        question:
+          $ref: '#/components/schemas/Question'
+        user:
+          $ref: '#/components/schemas/User'
+    QuestionReport:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        reason:
+          type: string
+        question:
+          $ref: '#/components/schemas/Question'
+        user:
+          $ref: '#/components/schemas/User'
+        reasonable:
+          type: boolean
+    Role:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        name:
+          type: string
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        login:
+          type: string
+        password:
+          type: string
+        displayName:
+          type: string
+        role:
+          $ref: '#/components/schemas/Role'
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+        answerReports:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnswerReport'
+        questionReports:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionReport'
+        questionLikes:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionLike'
+        questionAuthors:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionAuthor'
+    CollectionModelObject:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            objects:
+              type: array
+              items:
+                type: object
+        _links:
+          $ref: '#/components/schemas/Links'
+    CollectionModelAnswer:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            answers:
+              type: array
+              items:
+                $ref: '#/components/schemas/AnswerResponse'
+        _links:
+          $ref: '#/components/schemas/Links'
+    CollectionModelQuestionLike:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            questionLikes:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionLikeResponse'
+        _links:
+          $ref: '#/components/schemas/Links'
+    CollectionModelQuestionReport:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            questionReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionReportResponse'
+        _links:
+          $ref: '#/components/schemas/Links'
+    EntityModelAnswerReport:
+      type: object
+      properties:
+        reason:
+          type: string
+        reasonable:
+          type: boolean
+        _links:
+          $ref: '#/components/schemas/Links'
+    PagedModelEntityModelAnswerReport:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            answerReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/EntityModelAnswerReport'
+        _links:
+          $ref: '#/components/schemas/Links'
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+    EntityModelUser:
+      type: object
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+        displayName:
+          type: string
+        role:
+          $ref: '#/components/schemas/Role'
+        questionAuthors:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionAuthor'
+        _links:
+          $ref: '#/components/schemas/Links'
+    EntityModelAnswer:
+      type: object
+      properties:
+        content:
+          type: string
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+        _links:
+          $ref: '#/components/schemas/Links'
+    PagedModelEntityModelAnswer:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            answers:
+              type: array
+              items:
+                $ref: '#/components/schemas/EntityModelAnswer'
+        _links:
+          $ref: '#/components/schemas/Links'
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+    CollectionModelAnswerReport:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            answerReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/AnswerReportResponse'
+        _links:
+          $ref: '#/components/schemas/Links'
+    EntityModelQuestionLike:
+      type: object
+      properties:
+        _links:
+          $ref: '#/components/schemas/Links'
+    PagedModelEntityModelQuestionLike:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            questionLikes:
+              type: array
+              items:
+                $ref: '#/components/schemas/EntityModelQuestionLike'
+        _links:
+          $ref: '#/components/schemas/Links'
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+    EntityModelQuestionReport:
+      type: object
+      properties:
+        reason:
+          type: string
+        reasonable:
+          type: boolean
+        _links:
+          $ref: '#/components/schemas/Links'
+    PagedModelEntityModelQuestionReport:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            questionReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/EntityModelQuestionReport'
+        _links:
+          $ref: '#/components/schemas/Links'
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+    PagedModelEntityModelUser:
+      type: object
+      properties:
+        _embedded:
+          type: object
+          properties:
+            users:
+              type: array
+              items:
+                $ref: '#/components/schemas/EntityModelUser'
+        _links:
+          $ref: '#/components/schemas/Links'
+        page:
+          $ref: '#/components/schemas/PageMetadata'
+    AnswerRequestBody:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+        user:
+          type: string
+        parent:
+          type: string
+        children:
+          type: array
+          items:
+            type: string
+        answerReports:
+          type: array
+          items:
+            type: string
+        question:
+          type: string
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+    AnswerReportRequestBody:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        reason:
+          type: string
+        answer:
+          type: string
+        user:
+          type: string
+        reasonable:
+          type: boolean
+    QuestionRequestBody:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+        answers:
+          type: array
+          items:
+            type: string
+        questionReports:
+          type: array
+          items:
+            type: string
+        questionLikes:
+          type: array
+          items:
+            type: string
+        questionAuthors:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionAuthor'
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+    QuestionLikeRequestBody:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        question:
+          type: string
+        user:
+          type: string
+    QuestionReportRequestBody:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        reason:
+          type: string
+        question:
+          type: string
+        user:
+          type: string
+        reasonable:
+          type: boolean
+    UserRequestBody:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        login:
+          type: string
+        password:
+          type: string
+        displayName:
+          type: string
+        role:
+          $ref: '#/components/schemas/Role'
+        answers:
+          type: array
+          items:
+            type: string
+        answerReports:
+          type: array
+          items:
+            type: string
+        questionReports:
+          type: array
+          items:
+            type: string
+        questionLikes:
+          type: array
+          items:
+            type: string
+        questionAuthors:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionAuthor'
+    AnswerResponse:
+      type: object
+      properties:
+        content:
+          type: string
+        visible:
+          type: boolean
+        banned:
+          type: boolean
+    AnswerReportResponse:
+      type: object
+      properties:
+        reason:
+          type: string
+        reasonable:
+          type: boolean
+    QuestionLikeResponse:
+      type: object
+      properties: {}
+    QuestionReportResponse:
+      type: object
+      properties:
+        reason:
+          type: string
+        reasonable:
+          type: boolean
+    AuthRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    Link:
+      type: object
+      properties:
+        href:
+          type: string
+        hreflang:
+          type: string
+        title:
+          type: string
+        type:
+          type: string
+        deprecation:
+          type: string
+        profile:
+          type: string
+        name:
+          type: string
+        templated:
+          type: boolean
+    Links:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Link'
